@@ -4,34 +4,65 @@ using UnityEngine;
 
 public class PlayerCharacterScript : MonoBehaviour
 {
-    private const float speed_ = 1.0f;
-    private const float jump_count_ = 2.0f;
+    public enum State
+    {
+        NONE,
+        IDLE,
+        WALK,
+        JUMP
+    }
+    private const float speed_ = 2.0f;
+    private const float jumpspeed_= 3.0f;
     private float moveDir_ = 0.0f;
     [SerializeField] Rigidbody2D body_;
+    private Transform transform_;
     bool IsFacingRight_= false;
     bool IsFacingLeft_ = false;
-
+    SpriteRenderer sprite_;
+    Camera cam_;
     // Start is called before the first frame update
     void Start()
     {
         body_ = GetComponent<Rigidbody2D>();
+        sprite_ = GetComponent<SpriteRenderer>();
+        transform_ = GetComponent<Transform>();
+        cam_ = GetComponent<Camera>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKey(KeyCode.RightArrow))
+
+    }
+    private void FixedUpdate()
+    {
+        if (Input.GetKey(KeyCode.RightArrow))
         {
             moveDir_ += 1.0f;
         }
-        if(Input.GetKey(KeyCode.LeftArrow))
+        if (Input.GetKey(KeyCode.LeftArrow))
         {
             moveDir_ -= 1.0f;
         }
-        if(Input.GetKey(KeyCode.UpArrow))
+        if (Input.GetKey(KeyCode.UpArrow))
         {
             moveDir_ += 1.0f;
         }
-        body_.velocity = new Vector2(moveDir_ * speed_,moveDir_ * speed_);
+        var vel = body_.velocity;
+        body_.velocity = new Vector2(speed_ * moveDir_, body_.velocity.y);
+    }
+
+
+    private void PlayerReset()
+    {
+        if(cam_.transform.position.y > body_.transform.position.y +100)
+        {
+            cam_.Reset();
+        }
+        if(cam_.transform.position.x > body_.transform.position.x + 100)
+        {
+            cam_.Reset();
+        }
     }
 }
+
