@@ -47,6 +47,7 @@ public class PlayerCharacterScript : MonoBehaviour
         if (Input.GetKey(KeyCode.UpArrow))
         {
             moveDir_ += 1.0f;
+            Jump();
         }
         var vel = body_.velocity;
         body_.velocity = new Vector2(speed_ * moveDir_, body_.velocity.y);
@@ -63,6 +64,11 @@ public class PlayerCharacterScript : MonoBehaviour
         {
             cam_.Reset();
         }
+    }
+    private void Jump()
+    {
+        var vel = body_.velocity;
+        body_.velocity = new Vector2(body_.velocity.x, moveDir_ * jumpspeed_);
     }
 }
 
