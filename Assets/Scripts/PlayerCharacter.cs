@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerCharacterScript : MonoBehaviour
+public class PlayerCharacter: MonoBehaviour
 {
     public enum State
     {
@@ -11,13 +11,12 @@ public class PlayerCharacterScript : MonoBehaviour
         WALK,
         JUMP
     }
-    private const float speed_ = 2.0f;
-    private const float jumpspeed_= 3.0f;
+    private const float moveSpeed_ = 2.0f;
+    private const float jumpSpeed_= 3.0f;
     private float moveDir_ = 0.0f;
-    [SerializeField] Rigidbody2D body_;
+    Rigidbody2D body_;
     private Transform transform_;
-    bool IsFacingRight_= false;
-    bool IsFacingLeft_ = false;
+    bool isFacingRight_ = false;
     SpriteRenderer sprite_;
     Camera cam_;
     // Start is called before the first frame update
@@ -26,15 +25,12 @@ public class PlayerCharacterScript : MonoBehaviour
         body_ = GetComponent<Rigidbody2D>();
         sprite_ = GetComponent<SpriteRenderer>();
         transform_ = GetComponent<Transform>();
-        cam_ = GetComponent<Camera>();
+        cam_ = Camera.main;
     }
 
     // Update is called once per frame
-    void Update()
-    {
 
-    }
-    private void FixedUpdate()
+    void FixedUpdate()
     {
         if (Input.GetKey(KeyCode.RightArrow))
         {
@@ -46,11 +42,10 @@ public class PlayerCharacterScript : MonoBehaviour
         }
         if (Input.GetKey(KeyCode.UpArrow))
         {
-            moveDir_ += 1.0f;
             Jump();
         }
         var vel = body_.velocity;
-        body_.velocity = new Vector2(speed_ * moveDir_, body_.velocity.y);
+        body_.velocity = new Vector2(moveSpeed_ * moveDir_, body_.velocity.y);
     }
 
 
@@ -68,7 +63,6 @@ public class PlayerCharacterScript : MonoBehaviour
     private void Jump()
     {
         var vel = body_.velocity;
-        body_.velocity = new Vector2(body_.velocity.x, moveDir_ * jumpspeed_);
+        body_.velocity = new Vector2(body_.velocity.x, jumpSpeed_);
     }
 }
-
