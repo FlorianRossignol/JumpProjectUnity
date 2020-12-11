@@ -32,20 +32,21 @@ public class PlayerCharacter: MonoBehaviour
 
     void FixedUpdate()
     {
-        if (Input.GetKey(KeyCode.RightArrow))
+        if (Input.GetKeyDown(KeyCode.RightArrow))
         {
-            moveDir_ += 1.0f;
+            moveDir_ = 1.0f;
         }
-        if (Input.GetKey(KeyCode.LeftArrow))
+        if (Input.GetKeyDown(KeyCode.LeftArrow))
         {
-            moveDir_ -= 1.0f;
+            moveDir_ =- 1.0f;
         }
-        if (Input.GetKey(KeyCode.UpArrow))
+        if (Input.GetKeyDown(KeyCode.UpArrow))
         {
             Jump();
         }
+        
         var vel = body_.velocity;
-        body_.velocity = new Vector2(moveSpeed_ * moveDir_, body_.velocity.y);
+        body_.velocity = new Vector2(moveSpeed_ * moveDir_ , body_.velocity.y);
     }
 
 

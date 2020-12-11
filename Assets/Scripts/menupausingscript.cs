@@ -8,16 +8,20 @@ public class menupausingscript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        pausingGameobject_ = GetComponent<GameObject>();
+     
     }
 
-   
-    public void StartingPauseMenu()
+    private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKey(KeyCode.P))
         {
-            Time.timeScale = -1;
-            pausingGameobject_.SetActive(true);
+            StartingPauseMenu();
         }
+    }
+    private void StartingPauseMenu()
+    { 
+        Debug.Log("lol");
+        Time.timeScale = 0;
+        pausingGameobject_.SetActive(true);
     }
 }
