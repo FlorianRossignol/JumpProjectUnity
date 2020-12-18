@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManagerscript : MonoBehaviour
 {
@@ -16,6 +17,11 @@ public class GameManagerscript : MonoBehaviour
         if (Input.GetKey(KeyCode.P))
         {
             StartingPauseMenu();
+        }
+
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            PlayerReset();
         }
     }
     private void StartingPauseMenu()
@@ -34,5 +40,10 @@ public class GameManagerscript : MonoBehaviour
     {
         Time.timeScale = 1;
         pausingGameobject_.SetActive(false);
+    }
+
+    private void PlayerReset()
+    {
+        SceneManager.LoadScene("GameScene");   
     }
 }

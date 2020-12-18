@@ -3,7 +3,6 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Serialization;
-using UnityEngine.SceneManagement;
 
 public class PlayerCharacter : MonoBehaviour
 {
@@ -84,13 +83,6 @@ public class PlayerCharacter : MonoBehaviour
     }
 
 
-    private void PlayerReset()
-    {
-        if(Input.GetKeyDown(KeyCode.R))
-        {
-            SceneManager.LoadScene("GameScene");
-        }
-    }
     private void Jump()
     {
         var vel = body_.velocity;
