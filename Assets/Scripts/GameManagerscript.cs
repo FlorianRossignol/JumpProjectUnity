@@ -26,7 +26,6 @@ public class GameManagerscript : MonoBehaviour
     }
     private void StartingPauseMenu()
     { 
-        Debug.Log("lol");
         Time.timeScale = 0;
         pausingGameobject_.SetActive(true);
     }
