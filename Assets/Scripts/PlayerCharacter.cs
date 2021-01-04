@@ -61,7 +61,18 @@ public class PlayerCharacter : MonoBehaviour
        /* var vel = body_.velocity;
         body_.velocity = new Vector2(moveSpeed_ * moveDir_, body_.velocity.y);*/
 
-        switch (currentState_)
+
+        if((Input.GetAxis("Horizontal")) > DeadZone_ && isFacingRight_)
+        {
+            flip();
+        }
+
+        if ((Input.GetAxis("Horizontal")) < -DeadZone_ && !isFacingRight_)
+        {
+            flip();
+        }
+
+            switch (currentState_)
         {
             case State.IDLE:
                 if(Mathf.Abs(Input.GetAxis("Horizontal")) > DeadZone_)
@@ -123,4 +134,10 @@ public class PlayerCharacter : MonoBehaviour
         }
         currentState_ = state;
     }
+
+    void flip()
+    {
+        sprite_.flipX = !sprite_.flipX;
+        isFacingRight_ = !isFacingRight_;
+    }    
 }
