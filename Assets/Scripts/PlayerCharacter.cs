@@ -34,6 +34,7 @@ public class PlayerCharacter : MonoBehaviour
         transform_ = GetComponent<Transform>();
         cam_ = Camera.main;
         anim_ = GetComponent<Animator>();
+        ChangeState(State.JUMP);
     }
 
     // Update is called once per frame
@@ -121,7 +122,7 @@ public class PlayerCharacter : MonoBehaviour
         switch(state)
         {
             case State.IDLE:
-                anim_.Play("idle");
+                anim_.Play("Idle");
                 break;
             case State.WALK:
                 anim_.Play("walk");
