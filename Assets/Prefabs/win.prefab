@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: -1172750128148091475}
   - component: {fileID: 6602526868993641932}
   - component: {fileID: 2771831885056737224}
+  - component: {fileID: -5535582722697854145}
   m_Layer: 9
   m_Name: win
   m_TagString: Untagged
@@ -94,7 +95,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -131,3 +132,16 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &-5535582722697854145
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7140862619040617654}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bee19660ddaf60d4ea714f9d77d264a8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gamemanagerscript_: {fileID: 0}

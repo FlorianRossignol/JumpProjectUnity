@@ -7,10 +7,11 @@ public class GameManagerscript : MonoBehaviour
 {
     [SerializeField] GameObject pausingGameobject_;
     [SerializeField] GameObject playerfoot_;
+    AudioSource audiosource_;
     // Start is called before the first frame update
     void Start()
     {
-     
+        
     }
 
     private void Update()
@@ -24,16 +25,12 @@ public class GameManagerscript : MonoBehaviour
         {
             PlayerReset();
         }
-
-        if (playerfoot_.layer == LayerMask.NameToLayer("win"))
-        {
-            Debug.Log("pls");
-            Win();
-        }
+     
     }
     private void StartingPauseMenu()
     { 
         Time.timeScale = 0;
+        /*audiosource_.Pause();*/
         pausingGameobject_.SetActive(true);
     }
 
@@ -53,7 +50,7 @@ public class GameManagerscript : MonoBehaviour
         SceneManager.LoadScene("GameScene");   
     }
 
-    private void Win()
+    public void Win()
     {
         SceneManager.LoadScene("WinScene");
     }

@@ -15,6 +15,8 @@ public class PlayerCharacter : MonoBehaviour
     }
     [SerializeField] private PlayerCharacterFootScript foot_;
     private const float DeadZone_ = 0.1f;
+    private  const int jumpcountmax_ = 2;
+    private int jumpcountcurrent_ = 0;
     private State currentState_ = State.IDLE;
     private const float moveSpeed_ = 3.0f;
     private const float jumpSpeed_ = 6.0f;
@@ -38,7 +40,7 @@ public class PlayerCharacter : MonoBehaviour
 
     // Update is called once per frame
 
-    void FixedUpdate()
+    void Update()
     {
         body_.velocity = new Vector2(Input.GetAxis("Horizontal") * moveSpeed_, body_.velocity.y);
         /*if (Input.GetKeyDown(KeyCode.RightArrow))
@@ -49,9 +51,12 @@ public class PlayerCharacter : MonoBehaviour
         {
             moveDir_ = -1.0f;
         }*/
-        if (Input.GetKey(KeyCode.UpArrow))
+        if (Input.GetKeyDown(KeyCode.UpArrow))
         {
-            Jump();
+            if (jumpcountcurrent_ > 0)
+            {
+                Jump();
+            }
         }
         /*else
         {
@@ -112,7 +117,8 @@ public class PlayerCharacter : MonoBehaviour
 
     private void Jump()
     {
-       /* var vel = body_.velocity;*/
+        /* var vel = body_.velocity;*/
+        jumpcountcurrent_--;
         body_.velocity = new Vector2(body_.velocity.x, jumpSpeed_);
     }
 
@@ -139,5 +145,11 @@ public class PlayerCharacter : MonoBehaviour
     {
         sprite_.flipX = !sprite_.flipX;
         isFacingRight_ = !isFacingRight_;
-    }    
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        jumpcountcurrent_ = jumpcountmax_;
+    }
+
 }
