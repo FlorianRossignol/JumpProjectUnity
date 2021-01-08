@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class GameManagerscript : MonoBehaviour
 {
     [SerializeField] GameObject pausingGameobject_;
-    [SerializeField] GameObject winconditionobject_;
+    [SerializeField] GameObject playerfoot_;
     // Start is called before the first frame update
     void Start()
     {
@@ -23,6 +23,12 @@ public class GameManagerscript : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.R))
         {
             PlayerReset();
+        }
+
+        if (playerfoot_.layer == LayerMask.NameToLayer("win"))
+        {
+            Debug.Log("pls");
+            Win();
         }
     }
     private void StartingPauseMenu()
@@ -49,6 +55,6 @@ public class GameManagerscript : MonoBehaviour
 
     private void Win()
     {
-        SceneManager.LoadScene("");
+        SceneManager.LoadScene("WinScene");
     }
 }
