@@ -21,11 +21,16 @@ public class Menuscript : MonoBehaviour
 
     public void Tutorial()
     {
-        
+        SceneManager.LoadScene("Tutorial");
     }
 
     public void QuitGame()
     {
         Application.Quit();
+    }
+
+    public void ReturnMenu()
+    {
+        SceneManager.LoadScene("MenuScene");
     }
 }

@@ -748,6 +748,10 @@ PrefabInstance:
       propertyPath: audioclipwalk_
       value: 
       objectReference: {fileID: 8300000, guid: 4d9a49e79a38b0c43bd690980d22bb8d, type: 3}
+    - target: {fileID: 1389718767837896511, guid: a533071fe3463c640b1d0bc21f1d3557, type: 3}
+      propertyPath: audioclipjump_
+      value: 
+      objectReference: {fileID: 8300000, guid: b8f0a27afd3b1c945baec7f3949724e6, type: 3}
     - target: {fileID: 5927747302116020028, guid: a533071fe3463c640b1d0bc21f1d3557, type: 3}
       propertyPath: m_LocalPosition.x
       value: -53.01
