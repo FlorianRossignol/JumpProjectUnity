@@ -16,9 +16,8 @@ public class PlayerCharacter : MonoBehaviour
     [SerializeField] private PlayerCharacterFootScript foot_;
     private const float DeadZone_ = 0.1f;
     private State currentState_ = State.IDLE;
-    private const float moveSpeed_ = 2.0f;
-    private const float jumpSpeed_ = 3.0f;
-    private float moveDir_ = 0.0f;
+    private const float moveSpeed_ = 3.0f;
+    private const float jumpSpeed_ = 6.0f;
     [SerializeField]Rigidbody2D body_;
     private Transform transform_;
     bool isFacingRight_ = false;
