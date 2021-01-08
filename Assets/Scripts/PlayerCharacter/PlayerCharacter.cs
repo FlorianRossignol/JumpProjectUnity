@@ -14,6 +14,8 @@ public class PlayerCharacter : MonoBehaviour
         JUMP
     }
     [SerializeField] private PlayerCharacterFootScript foot_;
+    [SerializeField] private AudioSource audiosource_;
+    [SerializeField] private AudioClip audioclip_;
     private const float DeadZone_ = 0.1f;
     private  const int jumpcountmax_ = 2;
     private int jumpcountcurrent_ = 0;
@@ -152,4 +154,9 @@ public class PlayerCharacter : MonoBehaviour
         jumpcountcurrent_ = jumpcountmax_;
     }
 
+    public void PlaySound()
+    {
+        Debug.Log("play");
+        audiosource_.PlayOneShot(audioclip_);
+    }
 }

@@ -7,7 +7,7 @@ public class GameManagerscript : MonoBehaviour
 {
     [SerializeField] GameObject pausingGameobject_;
     [SerializeField] GameObject playerfoot_;
-    AudioSource audiosource_;
+    [SerializeField]AudioSource audiosource_;
     // Start is called before the first frame update
     void Start()
     {
@@ -29,9 +29,9 @@ public class GameManagerscript : MonoBehaviour
     }
     private void StartingPauseMenu()
     { 
-        Time.timeScale = 0;
-        /*audiosource_.Pause();*/
+        audiosource_.Pause();
         pausingGameobject_.SetActive(true);
+        Time.timeScale = 0;
     }
 
     public void QuitGame()
@@ -43,6 +43,7 @@ public class GameManagerscript : MonoBehaviour
     {
         Time.timeScale = 1;
         pausingGameobject_.SetActive(false);
+        audiosource_.Play();
     }
 
     private void PlayerReset()
