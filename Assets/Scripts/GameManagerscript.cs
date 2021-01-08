@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class GameManagerscript : MonoBehaviour
 {
     [SerializeField] GameObject pausingGameobject_;
+    [SerializeField] GameObject winconditionobject_;
     // Start is called before the first frame update
     void Start()
     {
@@ -44,5 +45,10 @@ public class GameManagerscript : MonoBehaviour
     private void PlayerReset()
     {
         SceneManager.LoadScene("GameScene");   
+    }
+
+    private void Win()
+    {
+        
     }
 }

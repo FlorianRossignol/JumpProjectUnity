@@ -5,7 +5,6 @@ using UnityEngine.SceneManagement;
 
 public class Menuscript : MonoBehaviour
 {
-    GameObject GameObject_;
     private void Start()
     {
         
@@ -15,14 +14,14 @@ public class Menuscript : MonoBehaviour
     {
         
     }
-    public void StarGame()
+    public void StartGame()
     {
         SceneManager.LoadScene("GameScene");
     }
 
     public void Tutorial()
     {
-
+        
     }
 
     public void QuitGame()
