@@ -53,7 +53,7 @@ public class PlayerCharacter : MonoBehaviour
         {
             moveDir_ = -1.0f;
         }*/
-        if (Input.GetKeyDown(KeyCode.UpArrow))
+        if (Input.GetButtonDown("JUMP"))
         {
             if (jumpcountcurrent_ > 0)
             {
