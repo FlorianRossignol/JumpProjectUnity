@@ -49,6 +49,6 @@ public class GameManagerscript : MonoBehaviour
 
     private void Win()
     {
-        
+        SceneManager.LoadScene("");
     }
 }
