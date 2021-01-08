@@ -15,7 +15,8 @@ public class PlayerCharacter : MonoBehaviour
     }
     [SerializeField] private PlayerCharacterFootScript foot_;
     [SerializeField] private AudioSource audiosource_;
-    [SerializeField] private AudioClip audioclip_;
+    [SerializeField] private AudioClip audioclipwalk_;
+    [SerializeField] private AudioClip audioclipjump_;  
     private const float DeadZone_ = 0.1f;
     private  const int jumpcountmax_ = 2;
     private int jumpcountcurrent_ = 0;
@@ -154,9 +155,13 @@ public class PlayerCharacter : MonoBehaviour
         jumpcountcurrent_ = jumpcountmax_;
     }
 
-    public void PlaySound()
+    public void PlaySoundWalk()
     {
-        Debug.Log("play");
-        audiosource_.PlayOneShot(audioclip_);
+        audiosource_.PlayOneShot(audioclipwalk_);
+    }
+
+    public void PlaySoundJump()
+    {
+        audiosource_.PlayOneShot(audioclipjump_);
     }
 }
