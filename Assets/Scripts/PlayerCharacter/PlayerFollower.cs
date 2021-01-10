@@ -5,7 +5,7 @@ using UnityEngine;
 // Cam follow the player character
 public class PlayerFollower : MonoBehaviour
 {
-    [SerializeField] private Transform player;
+    [SerializeField] private Transform player_;
     private Vector3 offset_;
     private const float zPosition_ = -10.0f;
     Transform camTransform_;
@@ -18,6 +18,6 @@ public class PlayerFollower : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        camTransform_.position = new Vector3(player.position.x, player.position.y, zPosition_); // Camera follows the player 
+        camTransform_.position = new Vector3(player_.position.x, player_.position.y, zPosition_); // Camera follows the player 
     }
 }

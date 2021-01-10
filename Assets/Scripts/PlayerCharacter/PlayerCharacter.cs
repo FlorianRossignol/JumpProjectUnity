@@ -30,7 +30,7 @@ public class PlayerCharacter : MonoBehaviour
     Camera cam_;
     [SerializeField]Animator anim_;
 
-    // Start is called before the first frame update
+    
     void Start()
     {
         body_ = GetComponent<Rigidbody2D>();
@@ -41,19 +41,11 @@ public class PlayerCharacter : MonoBehaviour
         ChangeState(State.JUMP);
     }
 
-    // Update is called once per frame
+    
 
     void Update()
     {
         body_.velocity = new Vector2(Input.GetAxis("Horizontal") * moveSpeed_, body_.velocity.y);
-        /*if (Input.GetKeyDown(KeyCode.RightArrow))
-        {
-            moveDir_ = 1.0f;
-        }
-        if (Input.GetKeyDown(KeyCode.LeftArrow))
-        {
-            moveDir_ = -1.0f;
-        }*/
         if (Input.GetButtonDown("JUMP"))
         {
             if (jumpcountcurrent_ > 0)
@@ -61,15 +53,7 @@ public class PlayerCharacter : MonoBehaviour
                 Jump();
             }
         }
-        /*else
-        {
-            moveDir_ = 0;
-        }*/
-
-       /* var vel = body_.velocity;
-        body_.velocity = new Vector2(moveSpeed_ * moveDir_, body_.velocity.y);*/
-
-
+        
         if((Input.GetAxis("Horizontal")) > DeadZone_ && isFacingRight_)
         {
             flip();
@@ -120,7 +104,6 @@ public class PlayerCharacter : MonoBehaviour
 
     private void Jump()
     {
-        /* var vel = body_.velocity;*/
         jumpcountcurrent_--;
         body_.velocity = new Vector2(body_.velocity.x, jumpSpeed_);
     }

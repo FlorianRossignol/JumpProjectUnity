@@ -5,10 +5,9 @@ using UnityEngine.SceneManagement;
 
 public class GameManagerscript : MonoBehaviour
 {
-    [SerializeField] GameObject pausingGameobject_;
-    [SerializeField] GameObject playerfoot_;
-    [SerializeField]AudioSource audiosource_;
-    // Start is called before the first frame update
+    [SerializeField] GameObject pausingGameObject_;
+    [SerializeField] GameObject playerFoot_;
+    [SerializeField]AudioSource audioSource_;
     void Start()
     {
         
@@ -29,8 +28,8 @@ public class GameManagerscript : MonoBehaviour
     }
     private void StartingPauseMenu()
     { 
-        audiosource_.Pause();
-        pausingGameobject_.SetActive(true);
+        audioSource_.Pause();
+        pausingGameObject_.SetActive(true);
         Time.timeScale = 0;
     }
 
@@ -42,8 +41,8 @@ public class GameManagerscript : MonoBehaviour
     public void ReturnGame()
     {
         Time.timeScale = 1;
-        pausingGameobject_.SetActive(false);
-        audiosource_.Play();
+        pausingGameObject_.SetActive(false);
+        audioSource_.Play();
     }
 
     private void PlayerReset()
