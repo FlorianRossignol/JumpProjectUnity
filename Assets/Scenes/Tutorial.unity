@@ -1245,8 +1245,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -753, y: -180.73}
-  m_SizeDelta: {x: 301.25616, y: 127.44879}
+  m_AnchoredPosition: {x: -748.2, y: -195.1}
+  m_SizeDelta: {x: 310.8083, y: 156.11163}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1424255158
 MonoBehaviour:
@@ -1268,7 +1268,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'press joystick left or right for walking '
+  m_text: 'press joystick left,right or up arrow for walking '
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: dc36b3fdc14f47ebb36fd484a67e268a, type: 2}
   m_sharedMaterial: {fileID: 2140032, guid: dc36b3fdc14f47ebb36fd484a67e268a, type: 2}
