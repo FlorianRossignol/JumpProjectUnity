@@ -3,11 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class SoundVolume : MonoBehaviour
+public class Soundvolume : MonoBehaviour
 {
     [SerializeField] Slider slider_;
     [SerializeField] AudioSource soundvolume_;
-
 
     public void VolumeSound()
     {
