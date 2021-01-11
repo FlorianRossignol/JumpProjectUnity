@@ -7,7 +7,7 @@ public class GameManagerscript : MonoBehaviour
 {
     [SerializeField] GameObject pausingGameObject_;
     [SerializeField] GameObject playerFoot_;
-    [SerializeField]AudioSource audioSource_;
+    [SerializeField] AudioSource audioSource_;
     void Start()
     {
         
@@ -15,7 +15,7 @@ public class GameManagerscript : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKey(KeyCode.P))
+        if (Input.GetKey(KeyCode.P) || Input.GetButton("RESET"))
         {
             StartingPauseMenu();
         }
