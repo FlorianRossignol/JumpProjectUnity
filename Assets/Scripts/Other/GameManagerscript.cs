@@ -45,7 +45,7 @@ public class GameManagerscript : MonoBehaviour
         audioSource_.Play();
     }
 
-    private void PlayerReset()
+    public void PlayerReset()
     {
         SceneManager.LoadScene("GameScene");   
     }

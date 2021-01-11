@@ -12,8 +12,10 @@ GameObject:
   - component: {fileID: -1278435564364398881}
   - component: {fileID: 6512059786685207344}
   - component: {fileID: 2651799575249634893}
+  - component: {fileID: -44001271937511322}
+  - component: {fileID: 4617679627992280107}
   m_Layer: 0
-  m_Name: Cube
+  m_Name: blockingprefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -131,3 +133,31 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.14, y: 0.84}
   m_EdgeRadius: 0
+--- !u!114 &-44001271937511322
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6302678615208370928}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 257e00e832cbdfa4ba15b129914f20fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gamemanagerscript_: {fileID: 4617679627992280107}
+--- !u!114 &4617679627992280107
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6302678615208370928}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 581ecccd2ca16524f9412eb516fab36d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pausingGameObject_: {fileID: 0}
+  playerFoot_: {fileID: 0}
+  audioSource_: {fileID: 0}
