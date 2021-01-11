@@ -44,6 +44,7 @@ public class GameManagerscript : MonoBehaviour
     {
         Time.timeScale = 1;
         pausingGameObject_.SetActive(false);
+        pausingtext_.SetActive(true);
         audioSource_.Play();
     }
 
