@@ -520,6 +520,7 @@ MonoBehaviour:
   pausingGameObject_: {fileID: 1955871445}
   playerFoot_: {fileID: 7053150}
   audioSource_: {fileID: 519420033}
+  pausingtext_: {fileID: 1322562519}
 --- !u!1 &207463972
 GameObject:
   m_ObjectHideFlags: 0
@@ -835,6 +836,7 @@ MonoBehaviour:
   pausingGameObject_: {fileID: 1955871445}
   playerFoot_: {fileID: 7053150}
   audioSource_: {fileID: 519420033}
+  pausingtext_: {fileID: 1322562519}
 --- !u!4 &444942976
 Transform:
   m_ObjectHideFlags: 0
@@ -3679,6 +3681,7 @@ MonoBehaviour:
   pausingGameObject_: {fileID: 1955871445}
   playerFoot_: {fileID: 7053150}
   audioSource_: {fileID: 519420033}
+  pausingtext_: {fileID: 1322562519}
 --- !u!1001 &1767969123
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -8,6 +8,7 @@ public class GameManagerscript : MonoBehaviour
     [SerializeField] GameObject pausingGameObject_;
     [SerializeField] GameObject playerFoot_;
     [SerializeField] AudioSource audioSource_;
+    [SerializeField] GameObject pausingtext_;
     void Start()
     {
         
@@ -30,6 +31,7 @@ public class GameManagerscript : MonoBehaviour
     { 
         audioSource_.Pause();
         pausingGameObject_.SetActive(true);
+        pausingtext_.SetActive(false);
         Time.timeScale = 0;
     }
 
