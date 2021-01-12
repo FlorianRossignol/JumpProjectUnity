@@ -16,12 +16,12 @@ public class GameManagerscript : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKey(KeyCode.P) || Input.GetButton("RESET"))
+        if (Input.GetKey(KeyCode.P) || Input.GetButton("RESETPLAYER"))
         {
             StartingPauseMenu();
         }
 
-        if (Input.GetKeyDown(KeyCode.R))
+        if (Input.GetKeyDown(KeyCode.R) || Input.GetButton("RESET"))
         {
             PlayerReset();
         }
